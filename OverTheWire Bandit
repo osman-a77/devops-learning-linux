@@ -1,3 +1,168 @@
 # devops-learning-linux
-#Here I will be documenting my solutions to the OverTheWire Bandit Game as well as explanations and key takeaway points. 
+Here I will be documenting my solutions to the OverTheWire Bandit Game as well as explanations and key lessons. 
 The main objective from completing this is to solidify my linux knowledge.
+
+
+## Level 0 → Level 1
+**Solution**
+cat readme
+
+**Explanation**
+This is quite straight forward. The cat command shows contents of file which contains password.
+
+**Password** ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+
+
+## Level 1 → Level 2
+**Solution**
+cat ./-
+
+**Explanation**
+The password is stored in a file who's name is - and is located in the home directory so you cannot simply just do cat -.
+
+**Password** 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+**Lesson**
+Here you learn how to read files whose name is a special character. 
+Also not naming a file a special character will make it easier to read.
+
+
+
+## Level 2 → Level 3
+**Solution**
+cat ./"--spaces in this filename--"
+
+**Explanation**
+Since the file name has spaces it must be enclosed with speech marks in the argument.
+
+*Password** MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+**Lesson**
+Here you learn how to read files whose names has spaces.
+
+
+
+## Level 3 → Level 4
+**Solution**
+cd inhere 
+ls -a
+cat ...Hiding-From-You
+
+**Explanation** 
+The password is in a hidden file in the directory called inhere. Therefor first you must change directory to inhere then use the ls -a
+command to see hidden files. Finally use cat command to read hidden file.
+
+**Password** 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+**Lesson**
+Here you learn how to list hidden files.
+
+
+
+## Level 4 → Lesson 5
+**Solution**
+cd inhere
+ls
+file ./-file07
+cat ./-file07
+
+**Explanation**
+First you must change to the inhere directory. Then by using the ls command you get a list files in which one of them has the password.
+By using the the file command you can identify which is the only human-readable file since it'll display ASCII text. Then use the cat 
+command to read the correct file.
+
+**Password** 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+**Lesson**
+Here you learn that the file command can be used to identify which file is human-readable.
+
+
+
+## Level 5 → Level 6
+**Solution**
+cd inhere
+find . -readable -size 1033c ! -executable
+cat maybehere07/.file2
+
+**Explanation**
+Here we're looking for a file with specific properties. First you change directory to inhere. Then you'll realize that there are too many 
+directories and files to check. So instead of looking at each at a time you can use a command that will search through everything to find
+exactly what you're looking for. Once desired file is displayed use cat command to read and find password.
+
+**Password** HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+**Lesson**
+Here you learn that by using the find command you can display the exact file with desired properties.
+
+
+
+## Level 6 → Level 7
+**Solution**
+find / -user bandit7 -group bandit6 -size 33c
+cat /var/lib/dpkg/info/bandit7.password
+
+**Explanation**
+Here we're told that the password is somewhere on the server so you must use commanad find /. This will start search from the root 
+directory. Then the password will be located in the location that doesn't deny permission. Then use cat command to read it.
+
+**Password** morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+**Lesson**
+Here you learn how to use find command to search entire server from the root directory.
+
+
+
+## Level 7 → Level 8
+**Solution**
+vim data.txt
+/millionth
+
+**EXplanation**
+Here we're told that the password is located next to the word millionth in the file data.txt, however, this file is massive. Using cat 
+command would be impossible. So instead using vim command and then in command mode typing /millionth will send you right to where the word
+millionth is.
+
+**Password** dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+**Lesson**
+Here you learn that at times using vim is better than cat especially for large files and for locating specific words.
+
+
+
+## Level 8 → Level 9
+**Solution**
+sort data.txt | uniq -u
+
+**Explanation**
+Here we are asked to look for passwword in data.txt and that it is the only line of text that appears once. Since file is too big you 
+can use the sort and uniq commands to find desired line of text.
+
+**Password** 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+**Lesson**
+Here you learn that using both sort nd uniq command can help find desired line of text.
+
+
+
+## Level 9 → Level 10
+**Solution**
+vim data.txt
+/==
+repeat n until find solution
+
+**Explanation**
+Password is located in the data.txt file proceeded by many '=' characters. First by using vim command and then while in command mode 
+typing /== will locate where in data.txt "==" characters are present. Afterward keep pressing n to search each location where "==" 
+characters are located until you find the password.
+
+*Password* FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+*Lesson*
+Here you learn how pressing n can allow you to locate desired line of text.
+
+
+
+## Level 10 → Level 11
+
+*Password* FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
