@@ -156,13 +156,64 @@ Password is located in the data.txt file proceeded by many '=' characters. First
 typing /== will locate where in data.txt "==" characters are present. Afterward keep pressing n to search each location where "==" 
 characters are located until you find the password.
 
-*Password* FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+**Password** FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 
-*Lesson*
+**Lesson**
 Here you learn how pressing n can allow you to locate desired line of text.
 
 
 
 ## Level 10 → Level 11
+**Solution**
+base64 -d data.txt
 
-*Password* FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+**Explanation**
+Here we're told that the password is located in data.txt but it's base64 coded. So in order to decode it you must use command base64 -d
+which will then display password.
+
+**Password** dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+**Lesson**
+Here you learn how to decode base64 coded data into string of printable ASCII characters.
+
+
+
+## Level 11 → Level 12
+**Solution**
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+**Explanation**
+Here the password is located within data.txt but its characters have been rotated 13 positions for both lowercase and uppercase. The tr 
+command can transform the string back to its original order.
+
+**Password** 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+**Lesson**
+Here you learn how to use the tr command to transform a string.
+
+
+
+## Level 12 → Level 13
+**Solution** (the comma is to separate each command line)
+mkdir /tmp/Hello ,  cp data.txt /tmp/Hello ,  cd /tmp/Hello ,  xxd -r data.txt > data ,  file data ,  mv data file.gz ,  gzip -d file.gz ,
+file file ,  mv file file.bz2 ,  bzip2 -d file.bz2 ,  file file ,  mv file file.gz , gzip -d file.gz ,  file file ,  mv file file.tar , 
+tar xf file.tar ,  file data5.bin ,  mv data5.bin data.tar ,  tar xf data.tar ,  file data6.bin ,  mv data6.bin data.bz2 ,
+bzip -d data.bz2 ,  file data ,  mv data data.tar ,  tar xf data.tar ,  file data8.bin ,  mv data8.bin data.gz ,  gzip -d data.gz ,
+file data ,  cat data
+
+*Explanation*
+Here the password is located in a hexdump file that has been repeatedly compressed. First you must create directory and move data.txt 
+there. Then you must use xxd command to reverse hexdump. Then you must repeatedly use the file command to identify file type then use 
+correct commands to decompress the file each time. Important commands are tar xf and gzip -d and bzip2 -d. When the file type is 
+ASCII text then use cat command to read that file and get the password.
+
+**Password** 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+**Lesson**
+Here you learn what are hexdumps and to reverse it. Also you learn how to decompress compressed files by using appropriate commands
+each time.
+
+
+
+## Level 13 → Level 14
+**Solution**
