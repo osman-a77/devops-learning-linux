@@ -201,7 +201,7 @@ tar xf file.tar ,  file data5.bin ,  mv data5.bin data.tar ,  tar xf data.tar , 
 bzip -d data.bz2 ,  file data ,  mv data data.tar ,  tar xf data.tar ,  file data8.bin ,  mv data8.bin data.gz ,  gzip -d data.gz ,
 file data ,  cat data
 
-*Explanation*
+**Explanation**
 Here the password is located in a hexdump file that has been repeatedly compressed. First you must create directory and move data.txt 
 there. Then you must use xxd command to reverse hexdump. Then you must repeatedly use the file command to identify file type then use 
 correct commands to decompress the file each time. Important commands are tar xf and gzip -d and bzip2 -d. When the file type is 
@@ -217,3 +217,58 @@ each time.
 
 ## Level 13 → Level 14
 **Solution**
+cat sshkey.private 
+then copy contents to private.key
+exit
+ls -la
+chmod 700 private.key
+ssh bandit14@bandit.labs.overthewire.org -p 2220 -i private.key
+cat /etc/bandit_pass/bandit14
+
+**Explanation**
+Here the password is stored in /etc/bandit_pass/bandit14, however, this can only be read by bandit14. First step is to use cat command to read contents of sshkey.private and then copy
+and paste on to a new file called private.key. Then exit server. Next you make sure that private.key is executable by using the chmod command. Then you log into bandit14 with the
+identity file private.key. Then the password is found by reading contents of /etc/bandit_pass/bandit14.
+
+**Password** MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+**Lesson**
+Here you learn how to log into a new server using ssh private key and always making sure to check whether a file is executable or not.
+
+
+
+## Level 14 → Level 15
+**Solution**
+nc localhost 30000
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+**Explanation**
+Here in order to find the password you must submit previous password to port 30000 on localhost. The nc command can send data to different hosts, therefore, you can then use it to 
+connect to the specified port and paste the previous password which will then output password for the current level.
+
+**Password** 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+**Lesson**
+Here you learn that you can use the nc command to send data to a different host.
+
+
+
+# Level 15 → Level 16
+**Solution**
+openssl s_client -connect localhost:30001
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+**Explanation**
+Here the password can be obtained by submitting the previous password to port 30001 on localhost using SSL/TLS encryption. This is done by using the commands openssl and s_client.
+This will send data using SSL encryption. Final you paste the previous password and then the output will be the password you're looking for.
+
+**Password** kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+**Lesson**
+Here you learn that you can send data using SSL encryption by using the commands openssl and s_client.
+
+
+
+# Level 16 → Level 17
+**Solution**
+
