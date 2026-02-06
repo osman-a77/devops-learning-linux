@@ -271,4 +271,5 @@ Here you learn that you can send data using SSL encryption by using the commands
 
 # Level 16 → Level 17
 **Solution**
-
+nmap localhost -p 31000-32000
+ncat localhost --ssl 31790
