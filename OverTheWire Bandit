@@ -272,4 +272,58 @@ Here you learn that you can send data using SSL encryption by using the commands
 # Level 16 → Level 17
 **Solution**
 nmap localhost -p 31000-32000
-ncat localhost --ssl 31790
+openssl s_client -connect localhost:31790
+copy private key
+
+**Explanation**
+Here we're asked to retrieve credentials for the next level by pasting password of previous level. The nmap command allows you to scan ports to find out which ones have a server 
+listening in on them. Then you can use openssl and s_client to figure which is speaking ssl and then finally one of them will give you the correct credentials.
+
+**Password** Still unknown
+
+**Lesson**
+Here you learn how to use the nmap command to scan ports.
+
+
+
+# Level 17 → Level 18
+**Solution**
+diff password.old passworld.new
+
+**Explanation**
+Here we're told that the password is in the file password.new and is the only line of text that differs from passworld.old. The diff command compares files line by line and will 
+output the difference.
+
+**Password** kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+**Lesson**
+Here you learn how to use diff command to compare files
+
+
+
+# Level 18 → Level 19
+**Solution**
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+
+**Explanation**
+Here we're told that the password is located in a file called readme, however, .bashrc has been modified to log you out if you try to login with ssh. The solution is to add a command 
+at the end and then enter password.
+
+**Password** IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+**Lesson**
+Here you learn that by adding a command at the end while trying to login with ssh will output just that command.
+
+
+
+# Level 19 → Level 20
+**Solution**
+./bandit20-do cat /etc/bandit_pass/bandit20
+
+**Explanation**
+You cannot read /etc/bandit_pass/bandit20 as bandit19 so you must temporarily behave as bandit 20 which will then allow you to read file contents and extract password.
+
+**Password** GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+**Lesson**
+Here you learn what setuid binaries are and how to take the role of another user temporarily.
