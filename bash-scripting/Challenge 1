@@ -1,1 +1,14 @@
+# Challenge 1: Basic Arithmetic Calculator
 
+For this challenge I've been asked to create a script that will accept two numbers as inputs and perform basic arithmetic operations.
+There are 4 requirements here which are:
+   1. You must prompt user for two numbers
+   2. You must perform all four operations
+   3. You must display results 
+   4. You must handle division by zero
+
+
+
+**Solution**
+
+#!/bin/bash
