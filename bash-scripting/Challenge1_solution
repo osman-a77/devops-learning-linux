@@ -1,14 +1,29 @@
-# Challenge 1: Basic Arithmetic Calculator
-
-For this challenge I've been asked to create a script that will accept two numbers as inputs and perform basic arithmetic operations.
-There are 4 requirements here which are:
-   1. You must prompt user for two numbers
-   2. You must perform all four operations
-   3. You must display results 
-   4. You must handle division by zero
-
-
-
-**Solution**
-
 #!/bin/bash
+
+
+read -p "Enter first number: " num1
+read -p "Enter second number: " num2
+
+
+if ! [[ "$num1" =~ ^-?[0-9]+$ && "$num2" =~ ^-?[0-9]+$ ]]; then
+    echo "Error: Please enter valid integers."
+    exit 1
+fi
+
+
+result1=$((num1 + num2))
+result2=$((num1 - num2))
+result3=$((num1 * num2))
+
+
+echo "$num1 + $num2 = $result1"
+echo "$num1 - $num2 = $result2"
+echo "$num1 * $num2 = $result3"
+
+
+if [ $num2 -eq 0 ]; then
+  echo "Cannot perform division by zero"
+else
+  result4=$((num1 / num2))
+  echo "$num1 / $num2 = $result4"
+fi
