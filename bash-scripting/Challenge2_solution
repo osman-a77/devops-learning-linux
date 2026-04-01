@@ -1,14 +1,14 @@
 #!/bin/bash
 
 mkdir bash_demo
-echo "Directory bash_demo was created"
+echo "Directory 'bash_demo' was created"
 
 cd bash_demo || exit
 
 touch demo.txt
-echo "File demo.txt was created"
+echo "File 'demo.txt' was created"
 
 echo "This file was created by a bash script on $(date +%Y-%m-%d)" > demo.txt
 
-echo "Contents of file demo.txt:"
+echo "Contents of file 'demo.txt':"
 cat demo.txt
