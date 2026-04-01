@@ -1,20 +1,20 @@
 # Core Bash Scripting Challenges
 
-**In this bash-scripting file I've included the solutions to 4 bash scripting challenges
+**In this bash-scripting file I've included the solutions to 4 bash scripting challenges**
 
-## Challenge 1: Basic Arithmetic Calculator
+### Challenge 1: Basic Arithmetic Calculator
 
 This script prompts user for two integer inputs, performs four basic arithmetic operations and then outputs solutions.
 
-## Challenge 2: File Operations Script
+### Challenge 2: File Operations Script
 
 This script automates creating a directory (bash_demo), a text file (demo.txt), writes a message with the current date into the file, and displays its contents.
 
-## Challenge 3: File Checker with Permissions
+### Challenge 3: File Checker with Permissions
 
 This script prompts the user for a filename, checks if the file exists, and reports whether it is readable, writable, and executable.
 
-## Challenge 4: Backup Script for Text Files
+### Challenge 4: Backup Script for Text Files
 
 This script prompts the user for a source directory, creates a timestamped backup directory, copies all .txt files into it, and displays the number of files backed up.
 
