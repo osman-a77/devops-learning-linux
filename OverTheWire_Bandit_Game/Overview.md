@@ -101,5 +101,23 @@ bandit/
 │   └── README.md
 │
 └── ...
+```
 
+## Approach
 
+For each level, I will first attempt to solve the challenge independently before documenting the solution.
+
+The goal is not simply to complete each level, but to understand the commands and techniques being used.
+
+When possible, I will also consider:
+
+- Why a particular command works
+- Whether there are alternative approaches
+- What Linux concepts are involved
+- How the technique could be useful outside of Bandit
+
+## Goal
+
+By completing and documenting the Bandit challenges, I aim to build a stronger foundation in Linux and command-line usage while developing the problem-solving skills needed for further cybersecurity study.
+
+This repository serves as both a record of my progress and a reference for the techniques I learn throughout the challenge.
