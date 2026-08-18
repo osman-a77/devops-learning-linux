@@ -83,6 +83,8 @@ bandit/
 │
 └── ...
 
+
+
 ## Approach
 
 For each level, I will first attempt to solve the challenge independently before documenting the solution.
