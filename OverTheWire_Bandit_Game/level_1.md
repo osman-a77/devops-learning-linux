@@ -9,7 +9,7 @@ cat read
 ```
 
 ## Explanation
-Essentially i used the cat command to display contents of the readme file in whcih the password was contained.
+Essentially i used the cat command to display contents of the readme file in which the password was contained.
 
 ## Password
 6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR
