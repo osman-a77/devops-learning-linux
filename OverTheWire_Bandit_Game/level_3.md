@@ -4,9 +4,9 @@
 Password is stored in a file in the home directory named --spaces in this filename-- 
 
 ## Solution
-'''
+```
 cat "./--spaces in this filename--"
-'''
+```
 
 ## Explanation
 The name of this file contains spaces and also begins with a -. Given that in the previous level we learned that you must precede filenames
