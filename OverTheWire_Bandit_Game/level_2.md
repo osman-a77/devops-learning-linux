@@ -4,9 +4,9 @@
 The password is stored in a file named - in the home directory.
 
 ## Solution
-'''
+```
 cat ./-
-'''
+```
 
 ## Explanation
 The only file located in the home directory is called - . For a file with this name you cannot simply precede it with just cat command but
