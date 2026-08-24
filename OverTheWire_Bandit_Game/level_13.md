@@ -48,3 +48,18 @@ cat data8
 ```
 
 ## Explanation
+For this challenge the password has been stored in a hexdump of a file that has been repeatedly compressed and archive, therefore, the
+solution here is to decode, decompress and unarchive until the file is in a human-readable format. Firstly you must create a new 
+directory and copy data.txt there in order to protect the original file. Then using the xxd -r command you can reverse the hexdump. This
+followed by a repeated process of checking file type, rename with correct file extension and decompressing. If it's a gzip compressed data
+file then use gzip -d command to decompress and if it's a bzip2 compressed data file then use bzip2 -d command to decompress. If the file
+is a tar type then use tar xf to extract file. Eventually there will be a file that is an ASCII text type in which you then use the cat
+command and retrieve solution.
+
+## Password
+qQYQiHOBPR8zR61qxYqX45quvihF2uzk
+
+## What I learned
+Renaming file with extension can help with visual clarity and avoid mistakes when going through repetitive process. The man command is 
+very powerful and directly helps here to know what command to use to decompress. Also knowing file types can help with executing next
+command.
