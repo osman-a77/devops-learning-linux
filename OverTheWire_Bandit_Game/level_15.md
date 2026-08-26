@@ -5,4 +5,6 @@ The password for the next level can be retrieved by submitting the password of t
 
 ## Solution
 ```
+cat /etc/bandit_pass/bandit14
+echo "aaWecNkG4FhxJQxz07uiwzVP6bJiYS65" | nc localhost 30000
 ```
