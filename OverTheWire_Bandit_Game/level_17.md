@@ -9,7 +9,7 @@ don’t. There is only 1 server that will give the next credentials, the others 
 ```
 nmap -p 31000-32000 localhost
 nmap -p 31046,31518,31691,31790,31960 -A localhost
-openssl s_client -connect localhost 31790
+openssl s_client -connect localhost:31790
 ```
 
 ## Explanation
