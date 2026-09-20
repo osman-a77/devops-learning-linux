@@ -2,12 +2,18 @@
 
 ### Update Packages
 
-`sudo apt update`
+```
+sudo apt update
+```
 
 ### Install NGINX
 
-`sudo apt install nginx`
+```
+sudo apt install nginx
+```
 
 ### Check NGINX Status
 
-`sudo systemctl status nginx`
+```
+sudo systemctl status nginx
+```
