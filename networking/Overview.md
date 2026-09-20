@@ -120,7 +120,7 @@ Instead of accessing the website using:
 
 the website could be accessed using my own domain:
 
-`http://my-domain.com`
+`http://osmana.co.uk`
 
 The NGINX default landing page was displayed successfully.
 
